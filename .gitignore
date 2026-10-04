@@ -1,0 +1,8 @@
+venv/
+__pycache__/
+*.pyc
+*.wav
+.DS_Store
+RULES.md
+PHASES.md
+*.log

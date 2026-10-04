@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700;800&family=Inter:wght@400;500;600;700&family=Martian+Mono:wght@400;600&display=swap');
+
+:root {
+    --forest: #1F4D2E;
+    --deep-forest: #0D2B1A;
+    --paper: #F5F2EB;
+    --ink: #1A1A1A;
+    --accent-red: #E73427;
+    --accent-warm: #FFB800;
+    --forest-tint: #E5EFE8;
+}
+
+/* 1. Main App Background and Base Font */
+html, body, .stApp, [data-testid="stAppViewContainer"], [data-testid="stMainBlockContainer"] {
+    background-color: var(--paper) !important;
+    color: var(--ink) !important;
+    font-family: 'Inter', sans-serif !important;
+}
+
+/* Override dark mode text color for all main container content */
+.stApp p, .stApp span, .stApp label, .stApp div, .stApp li, .stApp strong, .stApp small {
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+}
+
+/* 2. Headings */
+h1, h2, h3, h4, h5, h6,
+.stApp h1, .stApp h2, .stApp h3 {
+    font-family: 'Barlow Semi Condensed', sans-serif !important;
+    font-weight: 800 !important;
+    color: var(--forest) !important;
+    letter-spacing: -0.01em;
+}
+
+/* 3. Badges and Eyebrow */
+.eyebrow {
+    font-family: 'Martian Mono', monospace !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    color: var(--accent-red) !important;
+    background: rgba(231, 52, 39, 0.1) !important;
+    border: 1px solid rgba(231, 52, 39, 0.25) !important;
+    padding: 4px 10px !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+    margin-bottom: 8px !important;
+}
+
+.privacy-badge {
+    font-family: 'Martian Mono', monospace !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.04em !important;
+    color: var(--forest) !important;
+    background: rgba(31, 77, 46, 0.12) !important;
+    border: 1px solid rgba(31, 77, 46, 0.3) !important;
+    padding: 5px 12px !important;
+    border-radius: 4px !important;
+    display: inline-block !important;
+    font-weight: 600 !important;
+    margin-bottom: 12px !important;
+}
+
+.tagline {
+    font-family: 'Inter', sans-serif !important;
+    font-size: 1.05rem !important;
+    color: #333333 !important;
+    margin-top: -6px !important;
+    margin-bottom: 16px !important;
+    font-weight: 500 !important;
+}
+
+.hero-squares {
+    display: inline-flex;
+    gap: 4px;
+    vertical-align: middle;
+    margin-left: 8px;
+}
+
+.hero-sq {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+}
+
+/* 4. Sidebar: Forest green background with crisp WHITE text */
+[data-testid="stSidebar"],
+[data-testid="stSidebar"] > div,
+[data-testid="stSidebarContent"],
+[data-testid="stSidebarUserContent"] {
+    background-color: var(--forest) !important;
+    color: #FFFFFF !important;
+}
+
+[data-testid="stSidebar"] * {
+    color: #FFFFFF !important;
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3 {
+    color: #FFFFFF !important;
+    font-family: 'Barlow Semi Condensed', sans-serif !important;
+}
+
+[data-testid="stSidebar"] .stButton > button {
+    background-color: #FFFFFF !important;
+    color: var(--forest) !important;
+    border: none !important;
+    font-weight: 700 !important;
+    font-family: 'Inter', sans-serif !important;
+    border-radius: 6px !important;
+    padding: 8px 16px !important;
+    width: 100% !important;
+    transition: all 0.2s ease !important;
+}
+
+[data-testid="stSidebar"] .stButton > button:hover {
+    background-color: var(--accent-warm) !important;
+    color: var(--ink) !important;
+}
+
+[data-testid="stSidebar"] .stButton > button * {
+    color: var(--forest) !important;
+}
+
+[data-testid="stSidebar"] .stButton > button:hover * {
+    color: var(--ink) !important;
+}
+
+/* Sidebar Toggle Switch */
+[data-testid="stSidebar"] [data-testid="stToggle"] label p {
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+}
+
+/* 5. Main Action & Scenario Buttons: Forest green with WHITE text */
+div:not([data-testid="stSidebar"]) .stButton > button {
+    background-color: var(--forest) !important;
+    color: #FFFFFF !important;
+    border: 1.5px solid var(--forest) !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    font-family: 'Inter', sans-serif !important;
+    padding: 8px 14px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.2s ease !important;
+    width: 100% !important;
+}
+
+div:not([data-testid="stSidebar"]) .stButton > button:hover {
+    background-color: var(--deep-forest) !important;
+    border-color: var(--deep-forest) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15) !important;
+    transform: translateY(-1px);
+}
+
+div:not([data-testid="stSidebar"]) .stButton > button * {
+    color: #FFFFFF !important;
+}
+
+/* 6. Chat Messages Styling */
+[data-testid="stChatMessage"] {
+    border-radius: 12px !important;
+    padding: 14px 18px !important;
+    margin-bottom: 12px !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+    background-color: #FFFFFF !important;
+}
+
+/* User Message: Light forest tint with INK text */
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
+    background-color: var(--forest-tint) !important;
+    border: 1px solid #CFE2D5 !important;
+}
+
+/* Assistant Message: White with INK text */
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarAssistant"]) {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E6E6E6 !important;
+}
+
+/* Ensure all text inside chat messages is clearly readable ink */
+[data-testid="stChatMessage"] p,
+[data-testid="stChatMessage"] span,
+[data-testid="stChatMessage"] div,
+[data-testid="stChatMessage"] li,
+[data-testid="stChatMessage"] strong,
+[data-testid="stChatMessage"] code {
+    color: var(--ink) !important;
+    font-family: 'Inter', sans-serif !important;
+    line-height: 1.55 !important;
+}
+
+/* 7. Chat Input and Text Controls */
+[data-testid="stChatInput"] {
+    border-color: var(--forest) !important;
+}
+
+[data-testid="stChatInput"] textarea,
+.stTextInput input {
+    background-color: #FFFFFF !important;
+    color: var(--ink) !important;
+    font-family: 'Inter', sans-serif !important;
+    border: 1.5px solid var(--forest) !important;
+    border-radius: 8px !important;
+}
+
+[data-testid="stChatInput"] textarea::placeholder,
+.stTextInput input::placeholder {
+    color: #666666 !important;
+}
+
+/* 8. Audio Input Widget */
+[data-testid="stAudioInput"] {
+    background-color: #FFFFFF !important;
+    border: 1.5px solid #D8D4CA !important;
+    border-radius: 10px !important;
+    padding: 8px 12px !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+}
+
+[data-testid="stAudioInput"] * {
+    color: var(--ink) !important;
+}
+
+/* Audio Player */
+audio {
+    border-radius: 8px !important;
+    margin-top: 6px !important;
+    width: 100% !important;
+}
+
+/* 9. Container layout & spacing */
+.block-container,
+[data-testid="stMainBlockContainer"] {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    max-width: 900px !important;
+    margin: 0 auto !important;
+}
+
+[data-testid="stHeader"] {
+    background-color: transparent !important;
+}
+
